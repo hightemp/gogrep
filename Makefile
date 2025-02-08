@@ -11,7 +11,7 @@ build:
 	$(GOBUILD) -o $(BINARY_NAME) -v
 
 build-static:
-	CGO_ENABLED=0 $(GOBUILD) -o $(BINARY_NAME) -a -ldflags '-extldflags "-static"' -v
+	CGO_ENABLED=0 $(GOBUILD) -o $(BINARY_NAME)_static -a -ldflags '-extldflags "-static"' -v
 
 test:
 	$(GOTEST) -v ./...
