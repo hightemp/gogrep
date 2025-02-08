@@ -179,7 +179,7 @@ func SearchInDirRecursive(regex *regexp.Regexp, dir string) {
 	})
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error walking directory: %v\n", err)
-		return
+		os.Exit(4)
 	}
 	close(fswp.FilesCh)
 
@@ -200,6 +200,7 @@ func SearchInStdin(regex *regexp.Regexp) {
 
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintf(os.Stderr, "Error reading stdin: %v\n", err)
+		os.Exit(3)
 	}
 }
 
@@ -224,7 +225,7 @@ func main() {
 	regex, err := regexp.Compile(pattern)
 	if err != nil {
 		fmt.Println("Invalid regular expression:", err)
-		os.Exit(1)
+		os.Exit(2)
 	}
 
 	if recursiveSearchFlag {
