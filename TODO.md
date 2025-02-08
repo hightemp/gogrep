@@ -1,0 +1,6 @@
+- Реализовать поиск аналогичный оригинальному grep
+    - [ ] `grep "pattern" file.txt`
+    - [ ] `grep "pattern" file1.txt file2.txt file3.txt`
+    - [ ] `grep "pattern" *.txt`
+    - [x] `grep -r "pattern" .`
+    - [ ] `grep -i "pattern" file.txt`

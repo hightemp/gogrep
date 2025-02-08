@@ -1,0 +1,8 @@
+gogrep
+
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+test/**/*.txt
