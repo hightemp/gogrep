@@ -10,6 +10,9 @@ all: build
 build:
 	$(GOBUILD) -o $(BINARY_NAME) -v
 
+build-static:
+	CGO_ENABLED=0 $(GOBUILD) -o $(BINARY_NAME) -a -ldflags '-extldflags "-static"' -v
+
 test:
 	$(GOTEST) -v ./...
 
@@ -20,4 +23,4 @@ clean:
 run:
 	./$(BINARY_NAME)
 
-.PHONY: all build test clean run
+.PHONY: all build build-static test clean run
